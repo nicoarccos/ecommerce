@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '@/styles/globals.css';
+import './globals.css';
+import { Providers } from '@/store/provider';
+import Navbar from '@/components/layout/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Platform',
-  description: 'A flexible e-commerce platform for B2C, C2C, B2B, Marketplace, etc.',
+  title: 'E-Commerce Store',
+  description: 'Your one-stop shop for all your needs',
 };
 
 export default function RootLayout({
@@ -17,7 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+        <Navbar />
+        <Providers>
+          <main className="pt-14">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );

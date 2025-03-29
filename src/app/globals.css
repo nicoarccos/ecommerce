@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors;
+  }
+
+  .btn-icon {
+    @apply p-2 text-gray-600 hover:text-blue-500 transition-colors;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+
+  .feature-card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow;
+  }
+
+  .tab-button {
+    @apply px-4 py-2 text-gray-600 hover:text-blue-500 transition-colors;
+  }
+
+  .tab-button-active {
+    @apply text-blue-500 border-b-2 border-blue-500;
+  }
+
+  .tab-button-inactive {
+    @apply text-gray-600 hover:text-blue-500;
+  }
+
+  .specification-row {
+    @apply flex justify-between py-2 border-b last:border-0;
+  }
+
+  .heading-1 {
+    @apply text-3xl font-bold text-gray-900;
+  }
+
+  .heading-2 {
+    @apply text-2xl font-semibold text-gray-900;
+  }
+
+  .heading-3 {
+    @apply text-xl font-medium text-gray-900;
+  }
+
+  .badge {
+    @apply absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm;
+  }
+
+  .badge-discount {
+    @apply absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Animaciones */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Estilos de scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+} 

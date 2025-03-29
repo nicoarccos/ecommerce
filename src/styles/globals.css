@@ -3,52 +3,172 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 248, 249, 250;
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #f472b6;
+  --accent: #22d3ee;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --text-light: #64748b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 51, 51, 51;
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-white to-slate-50 min-h-screen text-gray-900;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
 }
 
 @layer components {
-  .btn {
-    @apply px-4 py-2 rounded font-medium transition-colors;
-  }
-  
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary text-white hover:bg-secondary/90;
-  }
-  
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:scale-[1.02] hover:shadow-xl transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-xl hover:bg-[#4f46e5] transition-colors duration-300 
+           flex items-center justify-center space-x-2 font-medium shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary px-6 py-3 rounded-xl hover:bg-primary/5 
+           transition-colors duration-300 flex items-center justify-center space-x-2 font-medium;
+  }
+
+  .btn-icon {
+    @apply p-4 border-2 border-gray-200 rounded-xl hover:border-primary hover:text-primary 
+           transition-all duration-300 hover:shadow-lg;
+  }
+
+  .badge {
+    @apply px-4 py-2 rounded-full text-sm font-medium shadow-md;
+  }
+
+  .badge-new {
+    @apply bg-gradient-to-r from-green-400 to-green-500 text-white;
+  }
+
+  .badge-discount {
+    @apply bg-gradient-to-r from-red-400 to-red-500 text-white;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 
+           focus:ring-primary/20 outline-none transition-all duration-300;
+  }
+
+  .tab-button {
+    @apply py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-300;
+  }
+
+  .tab-button-active {
+    @apply border-primary text-primary;
+  }
+
+  .tab-button-inactive {
+    @apply border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300;
+  }
 }
 
+/* Animaciones personalizadas */
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Efectos de hover personalizados */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+.hover-glow {
+  @apply transition-shadow duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.3)];
+}
+
+/* Gradientes personalizados */
+.gradient-primary {
+  @apply bg-gradient-to-r from-[#6366f1] to-[#4f46e5];
+}
+
+.gradient-surface {
+  @apply bg-gradient-to-br from-white to-gray-50;
+}
+
+/* Sombras personalizadas */
+.shadow-custom {
+  @apply shadow-[0_4px_20px_rgba(0,0,0,0.05)];
+}
+
+/* Bordes personalizados */
+.border-custom {
+  @apply border border-gray-100;
+}
+
+/* Tipografía personalizada */
+.heading-1 {
+  @apply text-4xl font-bold text-gray-900;
+}
+
+.heading-2 {
+  @apply text-3xl font-bold text-gray-900;
+}
+
+.heading-3 {
+  @apply text-2xl font-semibold text-gray-900;
+}
+
+.text-body {
+  @apply text-gray-600 leading-relaxed;
+}
+
+/* Componentes de UI personalizados */
+.feature-card {
+  @apply bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl 
+         transition-all duration-300 hover:scale-[1.02];
+}
+
+.specification-row {
+  @apply flex justify-between py-4 border-b border-gray-100 last:border-0;
+}
+
+.review-card {
+  @apply bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl 
+         transition-all duration-300;
+}
+
+/* Efectos de scroll suave */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Efectos de carga */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-200 rounded-xl;
+}
+
+/* Efectos de hover en imágenes */
+.image-hover {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Efectos de hover en botones */
+.button-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+/* Efectos de hover en tarjetas */
+.card-hover-effect {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
 } 

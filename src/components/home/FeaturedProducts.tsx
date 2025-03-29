@@ -60,32 +60,32 @@ const featuredProducts = [
 
 const FeaturedProducts: React.FC = () => {
   return (
-    <section className="py-16 relative">
+    <section className="py-4 relative">
       {/* Background decoration */}
-      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-gray-50 to-transparent"></div>
-      <div className="absolute -top-5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-gray-50 to-transparent"></div>
+      <div className="absolute -top-1.5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
       
-      <div className="container-custom relative">
+      <div className="container mx-auto px-4 relative">
         {/* Section header */}
-        <div className="mb-12 text-center space-y-4">
+        <div className="mb-3 text-center space-y-1">
           <div className="inline-flex items-center justify-center">
-            <div className="h-px w-8 bg-secondary/50"></div>
-            <span className="mx-3 text-sm font-medium text-secondary/80 uppercase tracking-wider">Trending Now</span>
-            <div className="h-px w-8 bg-secondary/50"></div>
+            <div className="h-px w-4 bg-secondary/50"></div>
+            <span className="mx-1.5 text-[10px] font-medium text-secondary/80 uppercase tracking-wider">Trending Now</span>
+            <div className="h-px w-4 bg-secondary/50"></div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold">Featured Products</h2>
-          <p className="text-gray-600 max-w-xl mx-auto">Discover our finest selection of trending products, hand-picked for exceptional quality and value</p>
+          <h2 className="text-lg md:text-xl font-bold">Featured Products</h2>
+          <p className="text-[10px] text-gray-600 max-w-sm mx-auto">Discover our finest selection of trending products, hand-picked for exceptional quality and value</p>
         </div>
         
         {/* Products grid with modern wrapper */}
-        <div className="relative bg-white/50 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 p-4 md:p-8">
+        <div className="relative bg-white/50 backdrop-blur-sm rounded-lg shadow-md border border-gray-100 p-2 md:p-3">
           {/* Corner accents */}
-          <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary rounded-tl-lg"></div>
-          <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-primary rounded-tr-lg"></div>
-          <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-primary rounded-bl-lg"></div>
-          <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-primary rounded-br-lg"></div>
+          <div className="absolute -top-0.5 -left-0.5 w-3 h-3 border-t-2 border-l-2 border-primary rounded-tl-lg"></div>
+          <div className="absolute -top-0.5 -right-0.5 w-3 h-3 border-t-2 border-r-2 border-primary rounded-tr-lg"></div>
+          <div className="absolute -bottom-0.5 -left-0.5 w-3 h-3 border-b-2 border-l-2 border-primary rounded-bl-lg"></div>
+          <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 border-b-2 border-r-2 border-primary rounded-br-lg"></div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -93,18 +93,18 @@ const FeaturedProducts: React.FC = () => {
         </div>
         
         {/* Bottom navigation */}
-        <div className="mt-12 flex flex-col md:flex-row items-center justify-between">
-          <div className="flex items-center space-x-2 text-sm text-gray-500 mb-4 md:mb-0">
-            <span className="w-3 h-3 rounded-full bg-secondary/30"></span>
+        <div className="mt-3 flex flex-col md:flex-row items-center justify-between">
+          <div className="flex items-center space-x-1 text-[10px] text-gray-500 mb-2 md:mb-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary/30"></span>
             <span>Showing 4 of 24 trending products</span>
           </div>
           
           <div className="flex items-center">
-            <Link href="/products" className="group relative inline-flex items-center justify-center px-8 py-3 font-bold overflow-hidden rounded-lg bg-primary text-white transition-all duration-300 ease-out hover:bg-white hover:text-primary border border-primary">
+            <Link href="/products" className="group relative inline-flex items-center justify-center px-3 py-1 font-bold overflow-hidden rounded-md bg-primary text-white transition-all duration-300 ease-out hover:bg-white hover:text-primary border border-primary text-[10px]">
               <span className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               <span className="relative inline-flex items-center">
                 View All Products
-                <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="ml-1 w-2.5 h-2.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </span>
@@ -113,7 +113,7 @@ const FeaturedProducts: React.FC = () => {
         </div>
         
         {/* Floating label */}
-        <div className="absolute -top-3 right-12 bg-secondary text-white text-xs font-bold px-4 py-1 rounded-full shadow-md">
+        <div className="absolute -top-1 right-6 bg-secondary text-white text-[6px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
           Hot Deals!
         </div>
       </div>
